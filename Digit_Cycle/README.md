@@ -19,5 +19,7 @@ Values returned in the array must be of the type number
 Examples
 
 counter_effect("1250") // [[0,1],[0,1,2],[0,1,2,3,4,5],[0]]
+
 counter_effect("0050") // [[0],[0],[0,1,2,3,4,5],[0]]
+
 counter_effect("0000") // [[0],[0],[0],[0]]
