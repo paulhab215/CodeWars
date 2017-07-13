@@ -1,21 +1,11 @@
 <?php # wave
-
 function wave($people){
-  $final_arr = [];
+  $final = [];
   
-  for ($i = 0; $i < strlen($people); $i++) { 
-    $tempstring = "";
-    for ($x = 0; $x < strlen($people); $x++) { 
-      if($x == $i){
-        $tempstring .= strtoupper($people[$x]);
-      }else{
-        $tempstring .= $people[$x];
-      }
-    }
-    if($tempstring != $people){
-      $final_arr[] = $tempstring;
-    }
+  for($i = 0; $i < strlen($people); $i++) {
+    if(ctype_space($people[$i])) continue; //check for whitespace
+    $final[] = substr_replace($people, strtoupper($people[$i]), $i, 1);
   }
-  return $final_arr;
+  return $final;
 }
 ?>
