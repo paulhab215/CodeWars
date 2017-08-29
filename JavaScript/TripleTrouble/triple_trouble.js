@@ -5,9 +5,9 @@ function tripledouble(num1, num2) {
   var arrdub  = (String(num2).match(/([0-9])\1/g) || []); // would return array of doubles
 
   triples = triples.map(function(val) {
-    return val.slice(0,2); // this will return ["99", "88"]
-  }).filter(function(n) { // NOTE 2
-    return doubles.indexOf(n) != -1; 
+    return val.slice(0,2); // this will return double version of triple array ["99", "88"]
+  }).filter(function(n) {
+    return arrdub.indexOf(n) != -1;  // check to see if trip version exists in double
   });
   if (triples.length > 0) {
     return 1; 
