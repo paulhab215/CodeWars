@@ -1,5 +1,13 @@
 # return max number of cakes that can be baked for a recipe based on available ingrediants
 
+// Best Practice Solution
+function cakes(recipe, available) {
+  return Object.keys(recipe).reduce(function(val, ingredient) {
+    return Math.min(Math.floor(available[ingredient] / recipe[ingredient] || 0), val)
+  }, Infinity)  
+}
+
+
 // Original Solution
 function cakes(recipe, available) {
     var maxcakes = [];
