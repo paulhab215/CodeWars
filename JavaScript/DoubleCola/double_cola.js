@@ -1,5 +1,13 @@
 # return the person who drink n-th can of cola
 
+//Best Practices Solution
+function whoIsNext(names, r) {
+  var l = names.length;
+  while (r >= l) { r -= l; l *= 2; }
+  return names[Math.ceil(names.length * r / l)-1];
+}
+
+
 // Original Solution
 function whoIsNext(names, r){
   let flagged=false, count=0, total=0, len = names.length;
